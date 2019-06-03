@@ -17,12 +17,13 @@
             // console.log($mob);
             var $tip = $("#tip");
             $.getJSON(
-                "../mobileServlet",
+                "../mobileServlet03",
                 //{'key1':value1,'key2':value2,...}
                 {"mobile":$mob},
-                function (result) {
+                function (result) {//result{'msg':'true'}
+                    console.log("qqq");
                     //请求成功
-                    if(result == "true"){
+                    if(result.msg == "true"){
                         $tip.html("此号码已经被注册，注册失败");
                     }else{
                         $tip.html( "注册成功！！");
